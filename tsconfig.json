@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "target": "es5",
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "jsx": "react"
+  },
+  "include": [
+    "index.tsx",
+    "src/**/*"
+  ]
+}
