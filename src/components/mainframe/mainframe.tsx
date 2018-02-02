@@ -1,17 +1,18 @@
 import * as React from "react";
-import {HeaderComponent} from "../header/header";
-import {SidebarComponent} from "../sidebar/sidebar";
-import {ContentComponent} from "../content/content";
+import {HeaderComponent} from "./header/header";
+import {ContentComponent} from "./content/content";
+import {SidebarComponent} from "./sidebar/sidebar";
+import {User} from "../../models/user";
 
 interface Props {
-
+    readonly authenticatedUser: User;
 }
 
 interface State {
     readonly selectedNavigationItem: string;
 }
 
-export class AppComponent extends React.Component<Props, State> {
+export class MainframeComponent extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
 
@@ -21,6 +22,7 @@ export class AppComponent extends React.Component<Props, State> {
     }
 
     render() {
+        const {authenticatedUser} = this.props;
         const {selectedNavigationItem} = this.state;
 
         const selectNavigationItem = (navigationItem: string) => {
@@ -30,14 +32,15 @@ export class AppComponent extends React.Component<Props, State> {
         };
 
         return (
-            <div className="app-component">
-                <HeaderComponent/>
+            <div className="mainframe-component">
+                <HeaderComponent authenticatedUser={authenticatedUser}/>
 
                 <div className="container">
-                    <SidebarComponent selectedNavigationItem={selectedNavigationItem} selectNavigationItem={selectNavigationItem}/>
+                    <SidebarComponent selectedNavigationItem={selectedNavigationItem}
+                                      selectNavigationItem={selectNavigationItem}/>
                     <ContentComponent selectedNavigationItem={selectedNavigationItem}/>
                 </div>
             </div>
-        );
+        )
     }
 }
