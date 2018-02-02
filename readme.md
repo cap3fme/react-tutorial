@@ -207,3 +207,7 @@ Mit hilfe von `display: flex` lassen sich HTML Komponenten leicht nebeneinander 
 Eine sehr gute Anleitung und Referenz ist [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 Für eine Beschreibung der Kurznotation wie z.B. `flex: 0 0 auto` empfiehlt sich z.B. die [Firefox CSS Dokumentation](https://developer.mozilla.org/en-US/docs/Web/CSS/flex).  
+
+### Kompatibilität
+
+Um zu sehen, welche CSS Features von welchen Browsern unterstützt werden, empfiehlt sich die Seite [Can I use it](https://caniuse.com/).
