@@ -172,6 +172,11 @@ export class SidebarComponent extends React.Component<Props, State> {
 Für jeden Eintrag wird ein Klickhandler gesetzt via `onClick={...}`, hier wird die neue Javascript [Arrow Notation](https://github.com/mbeaudru/modern-js-cheatsheet#-arrow-function) verwendet.
 
 
+### Restrukturierung / Login 
+
+Die erste große Restrukturierung und Implementierung des Logins haben wir in commit [a441cbaf820020b58c57684e2953f67cb1ce16d5](https://github.com/cap3fme/react-tutorial/commit/a441cbaf820020b58c57684e2953f67cb1ce16d5) durchgeführt.
+
+
 ## LESS
 
 ### LESS schreiben
@@ -255,3 +260,12 @@ Wichtig sind vor allem die neue [Arrow Notation](https://github.com/mbeaudru/mod
 
 ## TypeScript
 
+
+
+# Weitere Schritte
+
+- Logout
+- User-Service implementieren
+- Form validieren
+- Weitere Atome und Moleküle auslagern
+- 
