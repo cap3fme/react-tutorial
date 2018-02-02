@@ -1,14 +1,14 @@
 import * as React from "react";
-import {HeaderComponent} from "../header/header";
-import {SidebarComponent} from "../sidebar/sidebar";
-import {ContentComponent} from "../content/content";
+import {User} from "../../models/user";
+import {LoginComponent} from "../login/login";
+import {MainframeComponent} from "../mainframe/mainframe";
 
 interface Props {
 
 }
 
 interface State {
-    readonly selectedNavigationItem: string;
+    readonly authenticatedUser: User | null;
 }
 
 export class AppComponent extends React.Component<Props, State> {
@@ -16,27 +16,24 @@ export class AppComponent extends React.Component<Props, State> {
         super(props);
 
         this.state = {
-            selectedNavigationItem: ""
+            authenticatedUser: null
         };
     }
 
     render() {
-        const {selectedNavigationItem} = this.state;
+        const {authenticatedUser} = this.state;
 
-        const selectNavigationItem = (navigationItem: string) => {
+        const login = (user: User) => {
             this.setState({
-                selectedNavigationItem: navigationItem
+                authenticatedUser: user
             });
         };
 
         return (
             <div className="app-component">
-                <HeaderComponent/>
-
-                <div className="container">
-                    <SidebarComponent selectedNavigationItem={selectedNavigationItem} selectNavigationItem={selectNavigationItem}/>
-                    <ContentComponent selectedNavigationItem={selectedNavigationItem}/>
-                </div>
+                {authenticatedUser === null
+                    ? <LoginComponent login={login}/>
+                    : <MainframeComponent authenticatedUser={authenticatedUser}/>}
             </div>
         );
     }

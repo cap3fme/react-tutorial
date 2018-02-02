@@ -1,27 +1,9 @@
 .app-component {
-  display: flex;
-  flex-direction: column;
   height: 100%;
 
-  > .header-component {
-    flex: 0 0 auto;
-    height: 30px;
-    background-color: gray;
-  }
-
-  > .container {
-    flex: 1 1 0;
+  > .mainframe-component {
     display: flex;
-
-    > .sidebar-component {
-      flex: 0 0 auto;
-      width: 20%;
-      background-color: lightgray;
-    }
-
-    > .content-component {
-      flex: 1 1 0;
-      background-color: #eee;
-    }
+    flex-direction: column;
+    height: 100%;
   }
 }
