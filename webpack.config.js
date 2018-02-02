@@ -17,8 +17,19 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "ts-loader", query: { compilerOptions: { noEmit: false } } },
-            { test: /\.less$/, use: ["style-loader", "css-loader?-url", "less-loader"] }
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                query: {
+                    compilerOptions: {
+                        noEmit: false
+                    }
+                }
+            },
+            {
+                test: /\.less$/,
+                use: ["style-loader", "css-loader?-url", "less-loader"]
+            }
         ]
     },
     plugins: [
