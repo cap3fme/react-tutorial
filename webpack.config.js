@@ -25,8 +25,8 @@ module.exports = {
         new HtmlPlugin({
             minify: {
                 collapseWhitespace: true
-            }
-            //template: "index.html"
+            },
+            template: "index.html"
         })
     ]
 };

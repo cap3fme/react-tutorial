@@ -13,5 +13,5 @@ class HelloMessage extends React.Component<{ name: string }, {}> {
 
 ReactDOM.render(
     <HelloMessage name="Welt" />,
-    document.querySelector("body")
+    document.querySelector(".root")
 );
