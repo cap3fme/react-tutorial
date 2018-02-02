@@ -194,6 +194,10 @@ In `modules` muss unter `rules` eine Regel für LESS-Dateien zugefügt werden:
 
 Webpack fügt das compilierte CSS automatisch in die generierte Datei `./dist/index.<hash>.html` ein.
 
+### Features
+
+Die [offizielle Dokumentation](http://lesscss.org/features/) bietet eine gute Einführung. 
+
 ## CSS
 
 ### Flexbox
