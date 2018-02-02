@@ -34,7 +34,7 @@ export class AppComponent extends React.Component<Props, State> {
                 <HeaderComponent/>
 
                 <div className="container">
-                    <SidebarComponent selectNavigationItem={selectNavigationItem}/>
+                    <SidebarComponent selectedNavigationItem={selectedNavigationItem} selectNavigationItem={selectNavigationItem}/>
                     <ContentComponent selectedNavigationItem={selectedNavigationItem}/>
                 </div>
             </div>
