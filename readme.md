@@ -1,5 +1,5 @@
 GIT Clients:
-- Commandozeile 
+- Kommandozeile: https://git-scm.com/downloads
 - GIT Kraken
 - Empfehlung: IntelliJ 
 
