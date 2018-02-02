@@ -1,14 +1,16 @@
-GIT Clients:
-- Kommandozeile: https://git-scm.com/downloads
-- GIT Kraken
-- Empfehlung: IntelliJ 
+# Verwendete Software
 
-IDEs:
+## GIT Clients
+- Kommandozeile: https://git-scm.com/downloads
+- Empfehlung: IntelliJ verfügt über einen integrierten GIT Client. Dieser setzt jedoch die Installation des Kommandozeilenclients voraus.
+- GIT Kraken (noch relativ neu, kostenplfichtig) 
+
+## Entwicklungsumgebung
 - Empfehlung: IntelliJ Ultimate (Scala + Typescript) > WebStorm (Typescript)
 - MS Visual Code kann Typescript
 - Eclipse Unterstützung?!
 
-Tools:
+## Tools zur Entwicklung
 - node.js als Runtime für Javascript
 - TypeScript: Erlaubt statische Typsicherheit in Javascript
 - Webpack: Führt Build-Tasks aus
@@ -17,11 +19,7 @@ Tools:
 	- `yarn add @types/<package-name>` installiert die entsprechenden Typescript Bindings
 	- `yarn` lädt die benötigten Projekte herunter
 
-Notes:
-- 
-
-
-Vorbereitung:
+# Vorbereitung
 - node.js installieren
 - yarn installieren
 - IDE installieren
