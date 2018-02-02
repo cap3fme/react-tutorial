@@ -4,8 +4,8 @@ const HtmlPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: [
-        path.join(__dirname, "index.tsx"),
-        path.join(__dirname, "style/style.less")
+        path.join(__dirname, "src/index.tsx"),
+        path.join(__dirname, "src/style/style.less")
     ],
     output: {
         filename: "index.[hash].js",
@@ -37,7 +37,7 @@ module.exports = {
             minify: {
                 collapseWhitespace: true
             },
-            template: "index.html"
+            template: "src/index.html"
         })
     ]
 };
