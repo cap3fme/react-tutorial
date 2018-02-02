@@ -163,6 +163,9 @@ app.less
 
 ### LESS konfigurieren
 
+Betrifft folgenden Commit:
+[Commit](https://github.com/cap3fme/react-tutorial/commit/ac0afc3ec38b5416c16a63312f2e4676010400ca)
+
 Zunächst müssen einige Loader für das Verarbeiten von LESS und CSS dem Projekt hinzugefügt werden:
 
 `yarn add less-loader css-loader style-loader --dev`
