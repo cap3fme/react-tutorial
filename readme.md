@@ -94,7 +94,7 @@ Dort kann auch der Port konfiguriert werden.
 Durch einen Eintrag in der `./package.json` unter `scripts` kann der Dev Server über yarn gestartet werden:
 
 package.json: 
-```json
+```javascript
 "scripts": {
     "build": "./node_modules/.bin/webpack",
     "develop": "node ./scripts/webpack-dev-server.js",
@@ -137,4 +137,72 @@ Da die Methode abstrakt ist, muss sie implementiert werden.
 
 Im `<div>`-Element muss innerhalb der `render()`-Methode der Klassenname mit `className` angegeben werden, da `class` ein reserviertes Wort in TypeScript ist.
 Im gerenderten HTML steht später wie gewohnt `class`.
+
+## LESS
+
+### LESS schreiben
+
+Der zentrale Einstiegspunkt für LESS ist die Datei `./style/style.less`.
+In dieser Datei werden komponentenspezifische Dateien via `@import eingebunden:`
+
+```less
+@import "../components/components"
+```
+
+Die Datei `./components/componets.less` importiert dann die entsprechenden Dateien aus dem Unterordner `./components`:
+ 
+ ```less
+ @import "./app/app"
+ ```
+ 
+ ```shell
+$ ls components/app
+app.tsx
+app.less
+```
+
+### LESS konfigurieren
+
+Betrifft folgenden Commit:
+[Commit](https://github.com/cap3fme/react-tutorial/commit/ac0afc3ec38b5416c16a63312f2e4676010400ca)
+
+Zunächst müssen einige Loader für das Verarbeiten von LESS und CSS dem Projekt hinzugefügt werden:
+
+`yarn add less-loader css-loader style-loader --dev`
+
+Ebenfalls muss der LESS Preprozessor installiert werden, um LESS compilieren zu können:
+
+`yarn add less --dev`
+
+In der Datei `webpack.config.js` müssen die Loader für LESS-Dateien konfiguriert werden.
+
+Zunächst muss ein `./style/style.less` als Einstiegspunkt definiert werden:
+```javascript
+ entry: [
+    path.join(__dirname, "index.tsx"),
+    path.join(__dirname, "style/style.less")
+],
+``` 
+
+In `modules` muss unter `rules` eine Regel für LESS-Dateien zugefügt werden:
+```javascript
+{
+    test: /\.less$/,
+    use: ["style-loader", "css-loader?-url", "less-loader"]
+}
+```
+
+Webpack fügt das compilierte CSS automatisch in die generierte Datei `./dist/index.<hash>.html` ein.
+
+### Features
+
+Die [offizielle Dokumentation](http://lesscss.org/features/) bietet eine gute Einführung. 
+
+## CSS
+
+### Flexbox
+
+Mit hilfe von `display: flex` lassen sich HTML Komponenten leicht nebeneinander oder untereinander anordnen, zentrieren und ausrichten.
+
+Eine sehr gute Anleitung und Referenz ist [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
