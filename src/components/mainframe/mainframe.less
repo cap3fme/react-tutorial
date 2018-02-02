@@ -1,7 +1,6 @@
-.app-component {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.mainframe-component {
+  @import "content/content";
+  @import "sidebar/sidebar";
 
   > .header-component {
     flex: 0 0 auto;
@@ -21,7 +20,7 @@
 
     > .content-component {
       flex: 1 1 0;
-      background-color: #333;
+      background-color: #eee;
     }
   }
 }
