@@ -194,3 +194,11 @@ In `modules` muss unter `rules` eine Regel für LESS-Dateien zugefügt werden:
 
 Webpack fügt das compilierte CSS automatisch in die generierte Datei `./dist/index.<hash>.html` ein.
 
+## CSS
+
+### Flexbox
+
+Mit hilfe von `display: flex` lassen sich HTML Komponenten leicht nebeneinander oder untereinander anordnen, zentrieren und ausrichten.
+
+Eine sehr gute Anleitung und Referenz ist [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
