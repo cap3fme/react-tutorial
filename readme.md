@@ -1,16 +1,19 @@
 # Verwendete Software
 
 ## GIT Clients
+
 - Kommandozeile: https://git-scm.com/downloads
 - Empfehlung: IntelliJ verfügt über einen integrierten GIT Client. Dieser setzt jedoch die Installation des Kommandozeilenclients voraus.
 - GIT Kraken (noch relativ neu, kostenplfichtig) 
 
 ## Entwicklungsumgebung
+
 - Empfehlung: IntelliJ Ultimate (Scala + Typescript) > WebStorm (Typescript)
-- MS Visual Code kann Typescript
+- MS Visual Code kann Typescript und ist kostenfrei
 - Eclipse Unterstützung?!
 
 ## Tools zur Entwicklung
+
 - node.js als Runtime für Javascript
 - TypeScript: Erlaubt statische Typsicherheit in Javascript
 - Webpack: Führt Build-Tasks aus
@@ -44,8 +47,48 @@ Done in 14.31s.
 
 # Versionskontrolle
 
+## Setup
+
+Um über GIT kooperieren zu können, muss zunächst der Benuztername gesetzt werden:
+
+`$ git config --global user.name "Mona Lisa"`
+
+## Workflow
+
+Mehr dazu kann man in der [GitHub Dokumentation](https://help.github.com/articles/setting-your-username-in-git/) finden.
+
 In GIT läuft der Workflow wie folgt:
 - `git pull` aktualisiert den gewählten Branch
 - `git add <filename>` merkt eine Änderung zum Commit vor
 - `git commit -m "<commit message>"` Pflegt die markierten Änderungen ein.
 - `git push` lädt die eingepflegten Änderungen hoch
+
+
+# Entwicklung
+
+## Dev Server
+
+Der Dev Server wartet auf Dateiänderungen und übersetzt das Projekt dann neu.
+Das ist praktisch für die Entwicklung.
+
+Der Dev Server ist ein Paket, was mit yarn installiert werden kann: 
+
+`yarn add webpack-dev-server --dev`
+
+Der Dev Server wird konfiguriert über die Datei `scripts/webpack-dev-server.js`.
+Dort kann auch der Port konfiguriert werden.
+
+Durch einen Eintrag in der `./package.json` unter `scripts` kann der Dev Server über yarn gestartet werden:
+
+package.json: 
+```js
+"scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "develop": "node ./scripts/webpack-dev-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+Ausführen mit:
+
+`yarn develop`
