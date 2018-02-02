@@ -1,7 +1,7 @@
 import * as React from "react";
-import {HeaderComponent} from "./header";
-import {SidebarComponent} from "./sidebar";
-import {ContentComponent} from "./content";
+import {HeaderComponent} from "../header/header";
+import {SidebarComponent} from "../sidebar/sidebar";
+import {ContentComponent} from "../content/content";
 
 export class AppComponent extends React.Component {
     render() {
