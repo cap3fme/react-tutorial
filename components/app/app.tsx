@@ -8,8 +8,11 @@ export class AppComponent extends React.Component {
         return (
             <div className="app-component">
                 <HeaderComponent/>
-                <SidebarComponent/>
-                <ContentComponent/>
+
+                <div className="container">
+                    <SidebarComponent/>
+                    <ContentComponent/>
+                </div>
             </div>
         );
     }
