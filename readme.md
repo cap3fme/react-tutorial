@@ -138,6 +138,40 @@ Da die Methode abstrakt ist, muss sie implementiert werden.
 Im `<div>`-Element muss innerhalb der `render()`-Methode der Klassenname mit `className` angegeben werden, da `class` ein reserviertes Wort in TypeScript ist.
 Im gerenderten HTML steht später wie gewohnt `class`.
 
+### Properties und State
+
+Betreffender Commit: [1009b651fc3a564562dbed87ae60e76ab6c240e5](https://github.com/cap3fme/react-tutorial/commit/1009b651fc3a564562dbed87ae60e76ab6c240e5)
+
+In der Datei `components/sidebar/sidebar.tsx` definieren wir eine Liste mit Navigationselementen:
+
+```javascript
+const navigationItems = [
+    "Übersicht", "Disposition", "Meldungen"
+]; 
+```
+
+Diese werden in der React-Komponente mithilfe der [`map()`-Funktion](https://github.com/mbeaudru/modern-js-cheatsheet#arrayprototypemap) diese Elemente als Buttons in der Sitebar dargestellt:
+
+```ts
+export class SidebarComponent extends React.Component<Props, State> {
+    render() {
+        const selectNavigationItem = this.props.selectNavigationItem;
+
+        return (
+            <aside className="sidebar-component">
+                {navigationItems.map(navigationItem =>
+                    <button key={navigationItem}
+                            onClick={() => selectNavigationItem(navigationItem)}>{navigationItem}</button>)}
+            </aside>
+        );
+    }
+}
+
+```
+
+Für jeden Eintrag wird ein Klickhandler gesetzt via `onClick={...}`, hier wird die neue Javascript [Arrow Notation](https://github.com/mbeaudru/modern-js-cheatsheet#-arrow-function) verwendet.
+
+
 ## LESS
 
 ### LESS schreiben
@@ -211,3 +245,13 @@ Für eine Beschreibung der Kurznotation wie z.B. `flex: 0 0 auto` empfiehlt sich
 ### Kompatibilität
 
 Um zu sehen, welche CSS Features von welchen Browsern unterstützt werden, empfiehlt sich die Seite [Can I use it](https://caniuse.com/).
+
+## Javascript
+
+Eine kurze Einführung in modernes Javascript findet man zum Beispiel im [Moden JS Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet).
+
+Wichtig sind vor allem die neue [Arrow Notation](https://github.com/mbeaudru/modern-js-cheatsheet#-arrow-function).
+
+
+## TypeScript
+
