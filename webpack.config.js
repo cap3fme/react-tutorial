@@ -4,8 +4,8 @@ const HtmlPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: [
-        path.join(__dirname, "index.tsx")
-        //path.join(__dirname, "src/style/style.less")
+        path.join(__dirname, "index.tsx"),
+        path.join(__dirname, "style/style.less")
     ],
     output: {
         filename: "index.[hash].js",
@@ -17,8 +17,8 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "ts-loader", query: { compilerOptions: { noEmit: false } } }
-            //{ test: /\.less$/, use: ["style-loader", "css-loader?-url", "less-loader"] }
+            { test: /\.tsx?$/, loader: "ts-loader", query: { compilerOptions: { noEmit: false } } },
+            { test: /\.less$/, use: ["style-loader", "css-loader?-url", "less-loader"] }
         ]
     },
     plugins: [
