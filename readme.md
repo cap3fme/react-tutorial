@@ -57,12 +57,22 @@ Um über GIT kooperieren zu können, muss zunächst der Benuztername gesetzt wer
 
 Mehr dazu kann man in der [GitHub Dokumentation](https://help.github.com/articles/setting-your-username-in-git/) finden.
 
-In GIT läuft der Workflow wie folgt:
+In GIT läuft der Workflow wie folgt ab:
+
 - `git pull` aktualisiert den gewählten Branch
 - `git add <filename>` merkt eine Änderung zum Commit vor
 - `git commit -m "<commit message>"` Pflegt die markierten Änderungen ein.
 - `git push` lädt die eingepflegten Änderungen hoch
 
+Es bietet sich an, neue Änderungen zunächst auf einem eigene `branch` zu beginnen.
+
+- `git checkout -b <branch-name>` legt einen neuen branch an.
+- Nun können Änderungen durchgeführt werden.
+- `git add .` merkt die Änderunegn für das Commit vor.
+- `git commit -m <commit message>` führt den Commit durch
+- Wenn das Feature fertig ist, kann es zurück auf den master-Branch gezogen werden:
+- `git checkout master` wechselt zurück zur master-Branch.
+- `git merge <branch-name>` übernimmt die Änderungen vom eigenen Branch.
 
 # Entwicklung
 
