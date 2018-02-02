@@ -47,6 +47,9 @@ Done in 14.31s.
 
 # Versionskontrolle
 
+Im folgenden sind die wichtigsten Schritte zusammengefasst.
+Für eine ausführliche Erklärung ist das Online Buch [GIT Book Pro](https://git-scm.com/book/en/v2) sehr empfehlenswert.
+
 ## Setup
 
 Um über GIT kooperieren zu können, muss zunächst der Benuztername gesetzt werden:
@@ -91,7 +94,7 @@ Dort kann auch der Port konfiguriert werden.
 Durch einen Eintrag in der `./package.json` unter `scripts` kann der Dev Server über yarn gestartet werden:
 
 package.json: 
-```js
+```json
 "scripts": {
     "build": "./node_modules/.bin/webpack",
     "develop": "node ./scripts/webpack-dev-server.js",
@@ -102,3 +105,36 @@ package.json:
 Ausführen mit:
 
 `yarn develop`
+
+
+## React 
+
+### Links
+
+- Die [offizielle Einführung von React](https://reactjs.org/tutorial/tutorial.html) ist gut zum Kennenlehrnen, verwendet allerdings kein TypeScript.
+- Die [React-Dokumentation](https://reactjs.org/docs/hello-world.html) enthält ausführliche Informationen zu React und ist auch für Einsteiger gut geeignet.
+
+### React Components
+
+Komponenten sind die Grundbausteine einer React-Anwendung.
+
+Es bietet sich an, Komponenten in einem Unterverzeichnis `./components` zu speichern.
+
+Beispielkomponente:
+
+```ts
+import * as React from "react";
+
+export class AppComponent extends React.Component {
+    render() {
+        return <div className="app-component">App</div>;
+    }
+}
+```
+
+Die Methode `render()` ist eine abstrakte Methode aus der Klasse `React.Component`, welche angibt, wie die Komponente im DOM dargestellt werden kann.
+Da die Methode abstrakt ist, muss sie implementiert werden.
+
+Im `<div>`-Element muss innerhalb der `render()`-Methode der Klassenname mit `className` angegeben werden, da `class` ein reserviertes Wort in TypeScript ist.
+Im gerenderten HTML steht später wie gewohnt `class`.
+
