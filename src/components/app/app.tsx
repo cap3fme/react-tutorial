@@ -29,11 +29,17 @@ export class AppComponent extends React.Component<Props, State> {
             });
         };
 
+        const logout = () => {
+            this.setState({
+                authenticatedUser: null
+            });
+        };
+
         return (
             <div className="app-component">
                 {authenticatedUser === null
                     ? <LoginComponent login={login}/>
-                    : <MainframeComponent authenticatedUser={authenticatedUser}/>}
+                    : <MainframeComponent authenticatedUser={authenticatedUser} logout={logout}/>}
             </div>
         );
     }
