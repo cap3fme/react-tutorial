@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,
     "noUnusedLocals": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
