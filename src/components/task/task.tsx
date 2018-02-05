@@ -8,7 +8,6 @@ interface Props {
 interface State {
     readonly taskItems: string[];
     readonly newTaskItem:string | null;
-
 }
 
 export class TaskComponent extends React.Component<Props, State> {
