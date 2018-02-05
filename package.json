@@ -6,7 +6,8 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack",
     "develop": "node ./scripts/webpack-dev-server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +18,10 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.3.12",
     "@types/react": "^16.0.36",
     "@types/react-dom": "^16.0.3",
+    "babel-core": "^6.26.0",
     "css-loader": "^0.28.9",
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.3",
