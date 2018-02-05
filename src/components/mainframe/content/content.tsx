@@ -17,7 +17,6 @@ export class ContentComponent extends React.Component<Props> {
     private renderContent = (navigationItem: string) => {
         switch (navigationItem) {
             case "Übersicht":
-                return <div>Übersicht</div>;
                 return(
                     <div>
                     <div>Übersicht</div>
