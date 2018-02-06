@@ -29,7 +29,7 @@ export class HeaderComponent extends React.Component<Props, State> {
             <header className="header-component">
 
                 <aside className="sidebar-component">
-                    <div className="subMenu">
+                    <div className="Menu">
                         {navigationItems.map(navigationItem =>
                             <button key={navigationItem}
                                     className={navigationItem === selectedNavigationItem ? "selected" : ""}
@@ -55,5 +55,5 @@ export class HeaderComponent extends React.Component<Props, State> {
 }
 
 const navigationItems = [
-    "Übersicht", "Disposition", "Meldungen"
+    "Menu_1", "Menu_2", "Menu_3"
 ];
