@@ -28,22 +28,17 @@ export class HeaderComponent extends React.Component<Props, State> {
         return (
             <header className="header-component">
 
-                <div className="username">
-                    {authenticatedUser.username}
+                <div className="userImage">
+                    <AvatarImage authenticatedUser={authenticatedUser}/>
                 </div>
 
                 <div className="name">
                     {authenticatedUser.name}
                 </div>
 
-                <div className="userImage">
-                    <AvatarImage authenticatedUser={authenticatedUser}/>
-                </div>
-
                 <div className="logout">
                     <LogoutComponent logout={logout} />
                 </div>
-
 
             </header>
         );
