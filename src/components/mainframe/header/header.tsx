@@ -6,6 +6,8 @@ import {LogoutComponent} from "../../logout/logout";
 interface Props {
     readonly authenticatedUser: User;
     readonly logout: () => void;
+    readonly selectedNavigationItem: string;
+    readonly selectNavigationItem: (navigationItem: string) => void;
 }
 
 interface State {
@@ -18,9 +20,7 @@ export class HeaderComponent extends React.Component<Props, State> {
     render() {
 
         const {logout} = this.props;
-        //const {username, password} = this.state;
-
-        //const isSubmitDisabled = username === null || password === null;
+        const {selectedNavigationItem, selectNavigationItem} = this.props;
         const {authenticatedUser} = this.props;
 
         console.log({authenticatedUser});
@@ -28,24 +28,32 @@ export class HeaderComponent extends React.Component<Props, State> {
         return (
             <header className="header-component">
 
-                <div className="username">
-                    {authenticatedUser.username}
+                <aside className="sidebar-component">
+                    <div className="subMenu">
+                        {navigationItems.map(navigationItem =>
+                            <button key={navigationItem}
+                                    className={navigationItem === selectedNavigationItem ? "selected" : ""}
+                                    onClick={() => selectNavigationItem(navigationItem)}>{navigationItem}</button>)}
+                    </div>
+                </aside>
+
+                <div className="userImage">
+                    <AvatarImage authenticatedUser={authenticatedUser}/>
                 </div>
 
                 <div className="name">
                     {authenticatedUser.name}
                 </div>
 
-                <div className="userImage">
-                    <AvatarImage authenticatedUser={authenticatedUser}/>
-                </div>
-
                 <div className="logout">
                     <LogoutComponent logout={logout} />
                 </div>
-
 
             </header>
         );
     }
 }
+
+const navigationItems = [
+    "Übersicht", "Disposition", "Meldungen"
+];
