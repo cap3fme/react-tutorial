@@ -1,9 +1,12 @@
 import * as React from "react";
 import {InputField} from "../../atoms/input-field/input-field";
 import {User} from "../../models/user";
+import {MessageComponent} from "../message/message";
+import {Message} from "../../models/message";
 
 interface Props {
     readonly login: (user: User) => void;
+    readonly message: Message | null;
 }
 
 interface State {
@@ -22,7 +25,7 @@ export class LoginComponent extends React.Component<Props, State> {
     }
 
     render() {
-        const {login} = this.props;
+        const {login, message} = this.props;
         const {username, password} = this.state;
 
         const isSubmitDisabled = username === null || password === null;
@@ -45,6 +48,7 @@ export class LoginComponent extends React.Component<Props, State> {
         return (
             <div className="login-component">
                 <form onSubmit={onSubmit}>
+                    <MessageComponent message={message}/>
                     <p>
                         <label>
                             <span>Username</span>
