@@ -1,8 +1,8 @@
 import * as React from "react";
 
 interface Props {
-    readonly selectedNavigationItem: string;
-    readonly selectNavigationItem: (navigationItem: string) => void;
+    readonly selectedSubNavigationItem: string;
+    readonly selectSubNavigationItem: (subNavigationItem: string) => void;
 }
 
 interface State {
@@ -11,19 +11,21 @@ interface State {
 
 export class SidebarComponent extends React.Component<Props, State> {
     render() {
-        const {selectedNavigationItem, selectNavigationItem} = this.props;
+        const {selectedSubNavigationItem, selectSubNavigationItem} = this.props;
 
         return (
             <aside className="sidebar-component">
-                {navigationItems.map(navigationItem =>
-                    <button key={navigationItem}
-                            className={navigationItem === selectedNavigationItem ? "selected" : ""}
-                            onClick={() => selectNavigationItem(navigationItem)}>{navigationItem}</button>)}
+                <div className="subMenu">
+                    {subNavigationItems.map(subNavigationItem =>
+                        <button key={subNavigationItem}
+                                className={subNavigationItem === selectedSubNavigationItem ? "selected" : ""}
+                                onClick={() => selectSubNavigationItem(subNavigationItem)}>{subNavigationItem}</button>)}
+                </div>
             </aside>
         );
     }
 }
 
-const navigationItems = [
+const subNavigationItems = [
     "Übersicht", "Disposition", "Meldungen"
 ];

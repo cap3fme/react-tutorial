@@ -37,8 +37,8 @@ export class MainframeComponent extends React.Component<Props, State> {
                 <HeaderComponent authenticatedUser={authenticatedUser} logout={logout}/>
 
                 <div className="container">
-                    <SidebarComponent selectedNavigationItem={selectedNavigationItem}
-                                      selectNavigationItem={selectNavigationItem}/>
+                    <SidebarComponent selectedSubNavigationItem={selectedNavigationItem}
+                                      selectSubNavigationItem={selectNavigationItem}/>
                     <ContentComponent selectedNavigationItem={selectedNavigationItem}/>
                 </div>
             </div>
