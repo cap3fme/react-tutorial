@@ -6,6 +6,7 @@ import {User} from "../../models/user";
 
 interface Props {
     readonly authenticatedUser: User;
+    readonly logout: () => void;
 }
 
 interface State {
@@ -22,7 +23,7 @@ export class MainframeComponent extends React.Component<Props, State> {
     }
 
     render() {
-        const {authenticatedUser} = this.props;
+        const {authenticatedUser, logout} = this.props;
         const {selectedNavigationItem} = this.state;
 
         const selectNavigationItem = (navigationItem: string) => {
@@ -33,11 +34,11 @@ export class MainframeComponent extends React.Component<Props, State> {
 
         return (
             <div className="mainframe-component">
-                <HeaderComponent authenticatedUser={authenticatedUser}/>
+                <HeaderComponent authenticatedUser={authenticatedUser} logout={logout}/>
 
                 <div className="container">
-                    <SidebarComponent selectedNavigationItem={selectedNavigationItem}
-                                      selectNavigationItem={selectNavigationItem}/>
+                    <SidebarComponent selectedSubNavigationItem={selectedNavigationItem}
+                                      selectSubNavigationItem={selectNavigationItem}/>
                     <ContentComponent selectedNavigationItem={selectedNavigationItem}/>
                 </div>
             </div>

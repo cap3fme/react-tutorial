@@ -38,7 +38,9 @@ export class LoginComponent extends React.Component<Props, State> {
                     id: 1,
                     username: username,
                     password: password,
-                    email: ""
+                    name: "Peter Hansen",
+                    userImage: "https://s.gravatar.com/avatar/9346b9a8366d2720cba5ef2908b72619?s=40",
+                    email: "test@esn.de"
                 });
             }
         };

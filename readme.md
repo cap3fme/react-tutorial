@@ -261,6 +261,13 @@ Wichtig sind vor allem die neue [Arrow Notation](https://github.com/mbeaudru/mod
 ## TypeScript
 
 
+## Storybook
+
+Das Storybook ist nun eingehängt und kann mit `yarn storybook` gestartet werden (`yarn install` nicht vergessen!).
+
+Die einzelnen Atoms können über Einträge im Ordner `./stories/` eingehängt werden.
+
+Für Molecules und Organisms muss die Konfiguration des Storybooks noch angepasst werden unter `.storybook/config.js`.
 
 # Weitere Schritte
 
@@ -269,3 +276,4 @@ Wichtig sind vor allem die neue [Arrow Notation](https://github.com/mbeaudru/mod
 - Form validieren
 - Weitere Atome und Moleküle auslagern
 - 
+
