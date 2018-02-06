@@ -1,8 +1,8 @@
 export enum MessageType {
-    Info,
-    Warning,
-    Error,
-    Fatal,
+    Info = "info",
+    Warning = "warning",
+    Error = "error",
+    Fatal = "fatal",
 }
 
 export interface Message {

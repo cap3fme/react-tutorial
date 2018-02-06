@@ -37,8 +37,22 @@ export class AppComponent extends React.Component<Props, State> {
                 });
             } else {
                 console.log('password NOT correct');
+                let type: MessageType = MessageType.Error;
+
+                // Test für Validierung, kann später raus ->>
+                if (user.password == 'info') {
+                    type = MessageType.Info;
+                }
+                else if (user.password == 'warn') {
+                    type = MessageType.Warning;
+                }
+                if (user.password == 'fatal') {
+                    type = MessageType.Fatal;
+                }
+                // <<-
+
                 this.setState({
-                    message: {text: 'Das Passwort ist nicht korrekt!', type: MessageType.Error}
+                    message: {text: 'Das Passwort ist nicht korrekt!', type: type}
                 });
             }
         };
